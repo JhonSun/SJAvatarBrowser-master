@@ -25,7 +25,7 @@ static CGRect oldframe;
     UIImage *image=avatarImageView.image;
     UIWindow *window=[UIApplication sharedApplication].keyWindow;
     UIScrollView *backgroundView = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    backgroundView.contentSize = image.size;
+    backgroundView.contentSize = CGSizeMake(screenWidth, screenWidth * image.size.width / image.size.height);
     backgroundView.maximumZoomScale = 3;
     backgroundView.delegate = self;
     oldframe=[avatarImageView convertRect:avatarImageView.bounds toView:window];
